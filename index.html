@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mother's Day ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+  <div class="gift-box" onclick="openGift()">
+    <div class="lid"></div>
+    <div class="box"></div>
+    <span class="tap">Tap to Open 🎁</span>
+  </div>
+
+  <div class="card hidden" id="card">
+
+    <h1>Happy Mother's Day 💐</h1>
+
+    <p>
+      Dear Mom,<br><br>
+      Thank you for your endless love, care and support ❤️<br>
+      You are my biggest strength and my safest place ✨<br><br>
+      Love You Forever 💖
+    </p>
+
+    <!-- ADD YOUR VIDEO -->
+    <video controls autoplay loop>
+      <source src="mom-video.mp4" type="video/mp4">
+    </video>
+
+    <button onclick="showMessage()">
+      Click for Surprise ✨
+    </button>
+
+    <div class="surprise hidden" id="surprise">
+      You are the best mom in the world 🌍❤️
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
