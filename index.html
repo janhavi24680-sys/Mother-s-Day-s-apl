@@ -1,51 +1,236 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Mother's Day ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother's Day Surprise</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(to top,#ffd6e7,#fff5f8);
+height:100vh;
+}
+
+/* PAGES */
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+transition:1s;
+}
+
+.hidden{
+transform:translateX(100%);
+opacity:0;
+pointer-events:none;
+}
+
+/* HEART */
+
+.heart{
+position:relative;
+width:180px;
+height:180px;
+background:#ff4f81;
+transform:rotate(-45deg);
+animation:beat 1s infinite;
+margin-bottom:50px;
+}
+
+.heart::before,
+.heart::after{
+content:'';
+position:absolute;
+width:180px;
+height:180px;
+background:#ff4f81;
+border-radius:50%;
+}
+
+.heart::before{
+top:-90px;
+left:0;
+}
+
+.heart::after{
+left:90px;
+top:0;
+}
+
+.text{
+position:absolute;
+transform:rotate(45deg);
+color:white;
+font-size:28px;
+font-weight:bold;
+top:60px;
+left:30px;
+z-index:2;
+}
+
+/* MESSAGE */
+
+.msg{
+font-size:24px;
+color:#444;
+line-height:1.8;
+max-width:600px;
+}
+
+/* BUTTON */
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:40px;
+background:#ff2e63;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:25px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* VIDEO */
+
+video{
+width:90%;
+max-width:550px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FLOATING HEARTS */
+
+span{
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes beat{
+0%{
+transform:rotate(-45deg) scale(1);
+}
+50%{
+transform:rotate(-45deg) scale(1.1);
+}
+100%{
+transform:rotate(-45deg) scale(1);
+}
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="hearts"></div>
+<!-- PAGE 1 -->
 
-<div class="container">
+<div class="page" id="page1">
 
-  <div class="gift-box" onclick="openGift()">
-    <div class="lid"></div>
-    <div class="box"></div>
-    <span class="tap">Tap to Open 🎁</span>
-  </div>
+<div class="heart">
 
-  <div class="card hidden" id="card">
-
-    <h1>Happy Mother's Day 💐</h1>
-
-    <p>
-      Dear Mom,<br><br>
-      Thank you for your endless love, care and support ❤️<br>
-      You are my biggest strength and my safest place ✨<br><br>
-      Love You Forever 💖
-    </p>
-
-    <!-- ADD YOUR VIDEO -->
-    <video controls autoplay loop>
-      <source src="mom-video.mp4" type="video/mp4">
-    </video>
-
-    <button onclick="showMessage()">
-      Click for Surprise ✨
-    </button>
-
-    <div class="surprise hidden" id="surprise">
-      You are the best mom in the world 🌍❤️
-    </div>
-
-  </div>
+<div class="text">
+I LOVE<br>YOU<br>MOM ❤️
 </div>
 
-<script src="script.js"></script>
+</div>
+
+<div class="msg">
+Happy Mother's Day 🌸<br>
+Thank you for your love and care forever 💖
+</div>
+
+<button onclick="nextPage()">
+Open Video 🎥
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page hidden" id="page2">
+
+<h1 style="color:#ff2e63; margin-bottom:20px;">
+Special Video For Mom 🎶
+</h1>
+
+<!-- ADD YOUR GALLERY VIDEO -->
+
+<video controls>
+<source src="yourvideo.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<!-- HEARTS -->
+
+<script>
+
+/* FLOATING HEARTS */
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("span");
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+heart.style.fontSize=(Math.random()*20+15)+"px";
+
+document.body.appendChild(heart);
+
+}
+
+/* NEXT PAGE */
+
+function nextPage(){
+
+document.getElementById("page1").classList.add("hidden");
+
+document.getElementById("page2").classList.remove("hidden");
+
+}
+
+</script>
+
 </body>
 </html>
