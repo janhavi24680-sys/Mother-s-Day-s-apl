@@ -16,7 +16,7 @@ font-family:Arial,sans-serif;
 
 body{
 overflow:hidden;
-background:linear-gradient(to top,#ffd6e7,#fff5f8);
+background:linear-gradient(to top,#ffe6ef,#fff7fa);
 height:100vh;
 }
 
@@ -41,7 +41,40 @@ opacity:0;
 pointer-events:none;
 }
 
-/* HEART */
+/* BUTTON */
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:40px;
+background:#ff2e63;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:25px;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* PAGE 1 */
+
+.gift-box{
+font-size:130px;
+animation:bounce 2s infinite;
+}
+
+.open-text{
+font-size:42px;
+font-weight:bold;
+color:#ff2e63;
+margin-top:20px;
+}
+
+/* PAGE 2 */
 
 .heart{
 position:relative;
@@ -49,7 +82,7 @@ width:180px;
 height:180px;
 background:#ff4f81;
 transform:rotate(-45deg);
-animation:beat 1s infinite;
+animation:heartbeat 1s infinite;
 margin-bottom:50px;
 }
 
@@ -73,7 +106,7 @@ left:90px;
 top:0;
 }
 
-.text{
+.heart-text{
 position:absolute;
 transform:rotate(45deg);
 color:white;
@@ -84,72 +117,325 @@ left:30px;
 z-index:2;
 }
 
-/* MESSAGE */
+/* PAGE 3 */
+
+.msg-title{
+font-size:45px;
+color:#ff2e63;
+margin-bottom:20px;
+}
 
 .msg{
 font-size:24px;
-color:#444;
 line-height:1.8;
-max-width:600px;
+color:#444;
+max-width:700px;
 }
 
-/* BUTTON */
+/* PAGE 4 */
 
-button{
-padding:14px 30px;
-border:none;
-border-radius:40px;
-background:#ff2e63;
-color:white;
-font-size:18px;
-cursor:pointer;
-margin-top:25px;
-transition:0.3s;
+.video-title{
+font-size:40px;
+color:#ff2e63;
+margin-bottom:25px;
 }
-
-button:hover{
-transform:scale(1.1);
-}
-
-/* VIDEO */
 
 video{
 width:90%;
 max-width:550px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* FLOATING HEARTS */
+/* PAGE 5 */
+
+.memory-title{
+font-size:42px;
+color:#ff2e63;
+margin-bottom:20px;
+}
+
+.memory-msg{
+font-size:24px;
+line-height:1.8;
+color:#444;
+max-width:700px;
+}
+
+/* PAGE 6 HUG */
+
+.scene{
+position:relative;
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+.title{
+position:absolute;
+top:25px;
+width:100%;
+text-align:center;
+font-size:42px;
+font-weight:bold;
+color:#ff2e63;
+animation:glow 2s infinite alternate;
+}
+
+.floor{
+position:absolute;
+bottom:0;
+width:100%;
+height:120px;
+background:#ffc2d1;
+}
+
+/* MOTHER */
+
+.mother{
+position:absolute;
+right:18%;
+bottom:120px;
+width:180px;
+height:340px;
+animation:motherMove 8s forwards;
+}
+
+.mother-head{
+width:78px;
+height:82px;
+background:#f4c29a;
+border-radius:50%;
+position:absolute;
+top:0;
+left:48px;
+z-index:3;
+}
+
+.mother-hair{
+width:92px;
+height:95px;
+background:#111;
+border-radius:50%;
+position:absolute;
+top:-5px;
+left:-7px;
+z-index:-1;
+}
+
+.mother-body{
+position:absolute;
+top:75px;
+left:28px;
+width:120px;
+height:220px;
+background:#d6003d;
+border-radius:60px 60px 15px 15px;
+overflow:hidden;
+}
+
+.saree{
+position:absolute;
+width:130px;
+height:230px;
+background:#ff234f;
+clip-path:polygon(0 0,100% 0,75% 100%,0 100%);
+}
+
+.mother-arm1,
+.mother-arm2{
+position:absolute;
+width:90px;
+height:18px;
+background:#f4c29a;
+border-radius:20px;
+top:145px;
+}
+
+.mother-arm1{
+left:-20px;
+transform:rotate(-15deg);
+animation:motherHug1 8s forwards;
+}
+
+.mother-arm2{
+right:-20px;
+transform:rotate(15deg);
+animation:motherHug2 8s forwards;
+}
+
+/* DAUGHTER */
+
+.daughter{
+position:absolute;
+left:-250px;
+bottom:120px;
+width:180px;
+height:320px;
+animation:walk 8s forwards;
+}
+
+.daughter-head{
+width:75px;
+height:80px;
+background:#f4c29a;
+border-radius:50%;
+position:absolute;
+top:0;
+left:52px;
+z-index:3;
+}
+
+.daughter-hair{
+width:88px;
+height:92px;
+background:#111;
+border-radius:50%;
+position:absolute;
+top:-5px;
+left:-7px;
+z-index:-1;
+}
+
+.daughter-body{
+position:absolute;
+top:72px;
+left:40px;
+width:105px;
+height:200px;
+background:#ff8fc2;
+border-radius:55px 55px 20px 20px;
+}
+
+.daughter-arm1,
+.daughter-arm2{
+position:absolute;
+width:90px;
+height:18px;
+background:#f4c29a;
+border-radius:20px;
+top:145px;
+}
+
+.daughter-arm1{
+left:-20px;
+transform:rotate(-15deg);
+animation:daughterHug1 8s forwards;
+}
+
+.daughter-arm2{
+right:-20px;
+transform:rotate(15deg);
+animation:daughterHug2 8s forwards;
+}
+
+/* FINAL MESSAGE */
+
+.final-msg{
+position:absolute;
+bottom:35px;
+width:100%;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+color:#d6004c;
+animation:fadeIn 9s;
+}
+
+/* HEARTS */
 
 span{
 position:absolute;
 bottom:-50px;
 font-size:25px;
 animation:float 8s linear infinite;
+color:#ff5d8f;
 }
 
 /* ANIMATIONS */
 
-@keyframes beat{
-0%{
-transform:rotate(-45deg) scale(1);
+@keyframes bounce{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
 }
-50%{
-transform:rotate(-45deg) scale(1.1);
+
+@keyframes heartbeat{
+0%{transform:rotate(-45deg) scale(1);}
+50%{transform:rotate(-45deg) scale(1.1);}
+100%{transform:rotate(-45deg) scale(1);}
+}
+
+@keyframes walk{
+0%{
+left:-250px;
+}
+70%{
+left:36%;
 }
 100%{
-transform:rotate(-45deg) scale(1);
+left:36%;
 }
+}
+
+@keyframes motherMove{
+0%{
+right:18%;
+}
+70%{
+right:18%;
+}
+100%{
+right:32%;
+}
+}
+
+@keyframes daughterHug1{
+0%{transform:rotate(-15deg);}
+70%{transform:rotate(-15deg);}
+100%{transform:rotate(25deg);}
+}
+
+@keyframes daughterHug2{
+0%{transform:rotate(15deg);}
+70%{transform:rotate(15deg);}
+100%{transform:rotate(-25deg);}
+}
+
+@keyframes motherHug1{
+0%{transform:rotate(-15deg);}
+70%{transform:rotate(-15deg);}
+100%{transform:rotate(20deg);}
+}
+
+@keyframes motherHug2{
+0%{transform:rotate(15deg);}
+70%{transform:rotate(15deg);}
+100%{transform:rotate(-20deg);}
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #ff8fab;
+}
+to{
+text-shadow:0 0 22px #ff2e63;
+}
+}
+
+@keyframes fadeIn{
+0%{opacity:0;}
+60%{opacity:0;}
+100%{opacity:1;}
 }
 
 @keyframes float{
 0%{
-transform:translateY(0);
+transform:translateY(0) rotate(0deg);
 opacity:1;
 }
 100%{
-transform:translateY(-110vh);
+transform:translateY(-110vh) rotate(360deg);
 opacity:0;
 }
 }
@@ -163,21 +449,14 @@ opacity:0;
 
 <div class="page" id="page1">
 
-<div class="heart">
+<div class="gift-box">🎁</div>
 
-<div class="text">
-I LOVE<br>YOU<br>MOM ❤️
+<div class="open-text">
+Open Surprise For Mom 💖
 </div>
 
-</div>
-
-<div class="msg">
-Happy Mother's Day 🌸<br>
-Thank you for your love and care forever 💖
-</div>
-
-<button onclick="nextPage()">
-Open Video 🎥
+<button onclick="next1()">
+Open Box ✨
 </button>
 
 </div>
@@ -186,15 +465,125 @@ Open Video 🎥
 
 <div class="page hidden" id="page2">
 
-<h1 style="color:#ff2e63; margin-bottom:20px;">
-Special Video For Mom 🎶
-</h1>
+<div class="heart">
 
-<!-- ADD YOUR GALLERY VIDEO -->
+<div class="heart-text">
+I LOVE<br>YOU<br>MUMMY ❤️
+</div>
+
+</div>
+
+<button onclick="next2()">
+Next 💌
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page hidden" id="page3">
+
+<div class="msg-title">
+Special Message 💖
+</div>
+
+<div class="msg">
+Thank you for every smile, every hug and every sacrifice.  
+You are my forever safe place ❤️
+</div>
+
+<button onclick="next3()">
+Next 🎥
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page hidden" id="page4">
+
+<div class="video-title">
+Special Video For Mom 🎶
+</div>
 
 <video controls>
 <source src="yourvideo.mp4" type="video/mp4">
 </video>
+
+<button onclick="next4()">
+Next Surprise 🌸
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page hidden" id="page5">
+
+<div class="memory-title">
+My Sweet Mom 💕
+</div>
+
+<div class="memory-msg">
+No matter how big I grow,  
+I will always be your little child forever ❤️
+</div>
+
+<button onclick="next5()">
+Final Surprise 🤗
+</button>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page hidden" id="page6">
+
+<div class="scene">
+
+<div class="title">
+Happy Mother's Day 💖
+</div>
+
+<!-- MOTHER -->
+
+<div class="mother">
+
+<div class="mother-head">
+<div class="mother-hair"></div>
+</div>
+
+<div class="mother-body">
+<div class="saree"></div>
+</div>
+
+<div class="mother-arm1"></div>
+<div class="mother-arm2"></div>
+
+</div>
+
+<!-- DAUGHTER -->
+
+<div class="daughter">
+
+<div class="daughter-head">
+<div class="daughter-hair"></div>
+</div>
+
+<div class="daughter-body"></div>
+
+<div class="daughter-arm1"></div>
+<div class="daughter-arm2"></div>
+
+</div>
+
+<div class="floor"></div>
+
+<div class="final-msg">
+A Mother’s Hug Is Pure Magic ❤️
+</div>
+
+</div>
 
 </div>
 
@@ -202,9 +591,7 @@ Special Video For Mom 🎶
 
 <script>
 
-/* FLOATING HEARTS */
-
-for(let i=0;i<40;i++){
+for(let i=0;i<55;i++){
 
 let heart=document.createElement("span");
 
@@ -220,13 +607,38 @@ document.body.appendChild(heart);
 
 }
 
-/* NEXT PAGE */
-
-function nextPage(){
+function next1(){
 
 document.getElementById("page1").classList.add("hidden");
-
 document.getElementById("page2").classList.remove("hidden");
+
+}
+
+function next2(){
+
+document.getElementById("page2").classList.add("hidden");
+document.getElementById("page3").classList.remove("hidden");
+
+}
+
+function next3(){
+
+document.getElementById("page3").classList.add("hidden");
+document.getElementById("page4").classList.remove("hidden");
+
+}
+
+function next4(){
+
+document.getElementById("page4").classList.add("hidden");
+document.getElementById("page5").classList.remove("hidden");
+
+}
+
+function next5(){
+
+document.getElementById("page5").classList.add("hidden");
+document.getElementById("page6").classList.remove("hidden");
 
 }
 
