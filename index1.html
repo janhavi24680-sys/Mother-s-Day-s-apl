@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Mother's Day ❤️</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+}
+
+.container{
+  text-align:center;
+}
+
+.gift-box{
+  position:relative;
+  width:180px;
+  height:180px;
+  cursor:pointer;
+  margin:auto;
+  animation:float 2s infinite ease-in-out;
+}
+
+.box{
+  width:180px;
+  height:120px;
+  background:#ff4d6d;
+  position:absolute;
+  bottom:0;
+  border-radius:10px;
+}
+
+.lid{
+  width:200px;
+  height:40px;
+  background:#ff758f;
+  position:absolute;
+  top:20px;
+  left:-10px;
+  border-radius:10px;
+}
+
+.gift-box::before,
+.gift-box::after{
+  content:'';
+  position:absolute;
+  background:white;
+}
+
+.gift-box::before{
+  width:20px;
+  height:180px;
+  left:80px;
+}
+
+.gift-box::after{
+  width:180px;
+  height:20px;
+  top:80px;
+}
+
+.tap{
+  position:absolute;
+  bottom:-35px;
+  width:100%;
+  color:white;
+  font-size:18px;
+}
+
+.card{
+  margin-top:30px;
+  width:350px;
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  animation:pop 1s ease;
+}
+
+.card h1{
+  color:#ff4d6d;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#444;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+video{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+button{
+  padding:12px 20px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.surprise{
+  margin-top:15px;
+  color:#ff4d6d;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.hidden{
+  display:none;
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+@keyframes pop{
+  from{
+    transform:scale(0);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+.hearts::before,
+.hearts::after{
+  content:"💖 💕 💗 💞 💘";
+  position:absolute;
+  width:100%;
+  text-align:center;
+  animation:hearts 10s linear infinite;
+  font-size:30px;
+}
+
+.hearts::after{
+  animation-delay:5s;
+}
+
+@keyframes hearts{
+  from{
+    transform:translateY(100vh);
+  }
+  to{
+    transform:translateY(-100vh);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+  <div class="gift-box" onclick="openGift()">
+    <div class="lid"></div>
+    <div class="box"></div>
+    <span class="tap">Tap to Open 🎁</span>
+  </div>
+
+  <div class="card hidden" id="card">
+
+    <h1>Happy Mother's Day 💐</h1>
+
+    <p>
+      Dear Mom,<br><br>
+      Thank you for your endless love, care and support ❤️<br>
+      You are my biggest strength and my safest place ✨<br><br>
+      Love You Forever 💖
+    </p>
+
+    <!-- ADD YOUR VIDEO HERE -->
+    <video controls autoplay loop>
+      <source src="mom-video.mp4" type="video/mp4">
+    </video>
+
+    <button onclick="showMessage()">
+      Click for Surprise ✨
+    </button>
+
+    <div class="surprise hidden" id="surprise">
+      You are the best mom in the world 🌍❤️
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function openGift(){
+  document.querySelector(".gift-box").style.display="none";
+  document.getElementById("card").classList.remove("hidden");
+}
+
+function showMessage(){
+  document.getElementById("surprise").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
